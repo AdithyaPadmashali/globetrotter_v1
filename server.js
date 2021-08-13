@@ -4,8 +4,10 @@ const connectDB = require("./config/db");
 const path = require("path");
 const app = express();
 const socketio = require('socket.io')
+const cors = require('cors')
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./helperFunctions/chatHelper.js')
+app.use(cors())
 
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
