@@ -14,7 +14,7 @@ function UserDetails() {
 
     let id = _url.pathname.split('/')[2]
     const ac = new AbortController();
-    fetch('http://localhost:5000/api/users/me', {
+    fetch('/api/users/me', {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem('jwt'),
@@ -38,7 +38,7 @@ function UserDetails() {
     let id = _url.pathname.split('/')[2]
     console.log(id)
 
-    fetch("http://localhost:5000/api/posts/clickedUser", {
+    fetch("/api/posts/clickedUser", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

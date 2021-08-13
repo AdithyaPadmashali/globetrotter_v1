@@ -4,7 +4,7 @@ function Inbox() {
   const [reqId, setreqId] = useState([]);
 
   const getInbox = () => {
-    fetch("http://localhost:5000/api/users/inbox", {
+    fetch("/api/users/inbox", {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),
@@ -24,7 +24,7 @@ function Inbox() {
   }, []);
   const onAccept = (frid, val) => {
     const accepted = val;
-    fetch("http://localhost:5000/api/users/inbox/request", {
+    fetch("/api/users/inbox/request", {
       method: "PUT",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),

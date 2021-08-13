@@ -8,7 +8,7 @@ function Card(props) {
 
 
   const sendFriendRequest = (fid) => {
-    fetch("http://localhost:5000/api/users/friend/send", {
+    fetch("/api/users/friend/send", {
       method: "PUT",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),
@@ -24,7 +24,7 @@ function Card(props) {
   }
 
   const add_reccomend = (dest) => {
-    fetch("http://localhost:5000/api/test/reccomend", {
+    fetch("/api/test/reccomend", {
       method: "POST",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),

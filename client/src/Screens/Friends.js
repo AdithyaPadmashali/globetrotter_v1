@@ -6,7 +6,7 @@ function Friends() {
   const [room, setRoom] = useState('');
 
   function getFriendlist() {
-    fetch("http://localhost:5000/api/users/friend", {
+    fetch("/api/users/friend", {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),
@@ -23,7 +23,7 @@ function Friends() {
   }
 
   const unfriend = (frid) => {
-    fetch("http://localhost:5000/api/users/unfriend", {
+    fetch("/api/users/unfriend", {
       method: "PUT",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),

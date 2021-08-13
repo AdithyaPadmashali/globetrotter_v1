@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server"
+    "start": "set NODE_ENV=production&& node server",
+    "serve-build": "npm install -g serve && serve -s client/build",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",

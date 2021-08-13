@@ -11,7 +11,7 @@ function Profile() {
 
   useEffect(() => {
     const ac = new AbortController();
-    fetch('http://localhost:5000/api/users/me', {
+    fetch('/api/users/me', {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem('jwt'),
@@ -30,7 +30,7 @@ function Profile() {
   }, [])
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/posts/me", {
+    fetch("/api/posts/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function Profile() {
   }, []);
 
   const clicked = () => {
-    fetch("http://localhost:5000/api/test/coins", {
+    fetch("/api/test/coins", {
       method: "POST",
       headers: {
         "privatekey": (JSON.parse(localStorage.getItem('user')).privateKey).toString()
@@ -59,7 +59,7 @@ function Profile() {
   }
 
   const withdraw = () => {
-    fetch("http://localhost:5000/api/test/withdraw", {
+    fetch("/api/test/withdraw", {
       method: "GET",
       headers: {
         "privatekey": (JSON.parse(localStorage.getItem('user')).privateKey).toString()

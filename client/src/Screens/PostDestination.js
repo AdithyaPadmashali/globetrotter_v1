@@ -13,7 +13,7 @@ function PostDestination() {
 
     const clicked = () => {
 
-        // fetch('http://localhost:5000/api/test/dest_send', {
+        // fetch('/api/test/dest_send', {
         //     method: "POST",
         //     header: {
         //         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ function PostDestination() {
         //         console.log(res)
         //     }).catch(err => console.log(err))
 
-        fetch('http://localhost:5000/api/posts', {
+        fetch('/api/posts', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

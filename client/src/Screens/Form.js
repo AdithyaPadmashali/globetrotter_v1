@@ -13,7 +13,7 @@ const [name,setName] = useState();
 
 
 const clicked = () => {
-    fetch("http://localhost:5000/api/test/coins", {
+    fetch("/api/test/coins", {
       method: "POST",
       headers: {
         "privatekey" : (JSON.parse(localStorage.getItem('user')).privateKey).toString()
@@ -25,7 +25,7 @@ const clicked = () => {
   }
 
   const withdraw = () => {
-    fetch("http://localhost:5000/api/test/withdraw", {
+    fetch("/api/test/withdraw", {
       method: "GET",
       headers: {
         "privatekey" : (JSON.parse(localStorage.getItem('user')).privateKey).toString()

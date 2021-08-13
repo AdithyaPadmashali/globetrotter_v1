@@ -21,7 +21,7 @@ function Signup() {
   };
 
   const clicked = () => {
-    fetch("http://localhost:5000/api/users", {
+    fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
