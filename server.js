@@ -8,7 +8,13 @@ const cors = require('cors')
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./helperFunctions/chatHelper.js')
 app.use(cors())
+app.use(express.json());
 
+//routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/login", require("./routes/api/login"));
+app.use("/api/posts", require("./routes/api/posts"));
+app.use("/api/test", require("./routes/api/test"));
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
     console.log("get working")
@@ -28,15 +34,9 @@ const io = socketio(server, {
 // this is for connecting to the database
 connectDB();
 //middle ware
-app.use(express.json());
 
 
 
-//routes
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/login", require("./routes/api/login"));
-app.use("/api/posts", require("./routes/api/posts"));
-app.use("/api/test", require("./routes/api/test"));
 io.on('connection', (socket) => {
     console.log('new user connected')
 
