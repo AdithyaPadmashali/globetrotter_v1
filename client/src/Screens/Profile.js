@@ -30,7 +30,7 @@ function Profile() {
   }, [])
 
   useEffect(() => {
-    fetch("https://globetrottersocket.herokuapp.com/api/posts/me", {
+    fetch("/api/posts/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

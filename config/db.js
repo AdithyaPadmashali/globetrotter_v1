@@ -4,7 +4,7 @@ const production = config.get("mongoURI");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(production, {
+    await mongoose.connect("mongodb+srv://abhi17:abhi17@globetrotter.vpuol.mongodb.net/<dbname>?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
