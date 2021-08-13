@@ -5,7 +5,7 @@ function Card(props) {
 
 
   const sendFriendRequest = (fid) => {
-    fetch("http://localhost:5000/api/users/friend/send", {
+    fetch("/api/users/friend/send", {
       method: "PUT",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),

@@ -1,23 +1,18 @@
-import { React, useState, useEffect } from 'react'
-const url = require('url')
+import { React, useEffect, useState } from 'react'
 
-function UserDetails() {
+function Profile() {
     const [name, setName] = useState('')
     const [type, setType] = useState('')
     const [avatar, setAvatar] = useState('')
     const [email, setEmail] = useState('')
     useEffect(() => {
-        let _url = window.location.href
-        _url = url.parse(_url)
-
-        let id = _url.pathname.split('/')[2]
         const ac = new AbortController();
-        fetch('http://localhost:5000/api/users/me', {
+        fetch('/api/users/me', {
             method: "GET",
             headers: {
                 "x-auth-token": localStorage.getItem('jwt'),
                 "Content-Type": "application/json",
-                "id": id
+                "id": (JSON.parse(localStorage.getItem('user'))._id).toString()
             }
         }).then(res => res.json())
             .then(res => {
@@ -53,6 +48,7 @@ function UserDetails() {
             </div>
         )
     }
+
 }
 
-export default UserDetails
+export default Profile

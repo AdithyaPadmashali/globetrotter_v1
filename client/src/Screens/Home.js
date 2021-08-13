@@ -8,7 +8,7 @@ function Home() {
   // const [friendList, setFriendList] = useState([]);
 
   function getFriendlist() {
-    fetch("http://localhost:5000/api/users/friend", {
+    fetch("/api/users/friend", {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem("jwt"),
@@ -27,7 +27,7 @@ function Home() {
     getFriendlist()
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/api/posts", {
+    fetch("/api/posts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
